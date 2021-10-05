@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1631524569 source:e:\nesar\documents\assignments\main.c
+	<stdio.h>
+	<assert.h>
+	"operator.h"
+
+1631524524 e:\nesar\documents\assignments\operator.h
+
+1631522252 source:e:\nesar\documents\assignments\operator.c
+	"operator.h"
+
+1632392404 source:c:\users\nesar\documents\github\assignments\assignments\operator.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"operator.h"
+
+1632392977 c:\users\nesar\documents\github\assignments\assignments\operator.h
+
+1632389497 source:c:\users\nesar\documents\github\assignments\assignments\main.c
+	<stdio.h>
+	<assert.h>
+	"operator.h"
+
