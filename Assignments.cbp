@@ -31,13 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Copy_Contents.txt" />
+		<Unit filename="even-numbers.txt" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="numbers.txt" />
+		<Unit filename="odd-numbers.txt" />
 		<Unit filename="operator.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="operator.h" />
+		<Unit filename="studytonight.txt" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

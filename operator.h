@@ -257,15 +257,16 @@ int binary_search_array(int arr[], int l, int r, int x);
 
 
     // WAP to read a string from the user and find the length of string.( Note: Do not use string.h header file)
+int string_length ();
 
 
     /* Write a function that will scan a character string passed as an argument and convert all lower-case
         characters into their upper-case equivalents. */
-
+int upper_argument(char str[100]);
 
 
     // Write a program to read a string from the user and reverse the string.( Note: Do not use string.h header file)
-
+int string_reverse ();
 
     // WAP to construct 5 * 5 matrix and display the contents. Use functions for construction and display of matrix.
 int matrix_construct_display(int row_size, int column_size);
@@ -273,14 +274,17 @@ int matrix_construct_display(int row_size, int column_size);
 
 
     // WAP to add 2 matrices.
+int matrix_addition(int row_size, int column_size);
 
 
     // WAP to check whether 2 matrices are same.
+int check_matrices_are_same (int row_size, int column_size);
 
 
     /* WAP program to check if given matrix is a sparse matrix. If the number of zeros in a matrix exceeds
     (n*m)/2, where n, m is the dimension of the matrix, matrix is sparse matrix. Sparse matrix has more
     zero elements than nonzero elements.   */
+int sparce_matrix_check(int row_size, int column_size);
 
 
 // Day 6
@@ -289,16 +293,24 @@ int matrix_construct_display(int row_size, int column_size);
     // Write a program to store and print the roll no., name, age and marks of 10 students using structures.
 struct _student_
 {
-    char name[];
     int roll_number,age, marks;
+    char name[30];
 };
 
 typedef struct _student_ Student;
 
+int student_details (int number);
 
 
     // Write a program to add, subtract and multiply two complex numbers using structures.
+struct _complex_
+{
+  int real, img;
+};
 
+typedef struct _complex_ Complex;
+
+Complex operations_on_complex_numbers (Complex a, Complex b, int choice);
 
     /* Take the price and quantity of items as an input. Write a C function to calculate the sum of the prices.
     Write another C function to calculate the discount according to the following rules:
@@ -367,27 +379,37 @@ Array * deallocate(Array *);
 			iii. Return student details who have scored highest marks. (Assume only one student has scored highest marks)
 			iv. Display the details of the students whose name begins with ‘A’.
 			v. Deallocate all the memory before exiting the program */
+int student_data (int noOfRecords);
 
 
 	/* In an X-Y Plane there are N numbers of points at location (x,y). Each point has a weight associated with it. Define
 	the structure for the above problem. Find the point with maximum weight. Assuming all points are connected,
 	count the number of vertical and horizontal lines. */
+struct _xy_plane_
+{
+    int point[2], weight;
+};
+
+typedef struct _xy_plane_ XY_PLANE;
 
 
 //DAY 9
 
 	// Write a simple program to display the contents of a file.
+int display_contents_of_file();
 
 
 	// Write a program to copy the contents of one file to another.
+int file_copy();
 
 
 	// Write a program to count number of characters, spaces tabs and lines in a file.
-
+int file_count();
 
 	/* Read a file which contains one number per line. Check the number is odd or even and write to corresponding odd.txt
 	or even.txt accordingly. Note: Numbers may not be single digit numbers. */
-
+int file_odd_even();
+int isEven();
 
 	/* Write a program to create telephone directory. It should include Name, address and telephone number.
 	It should have facilities for adding, deleting, editing and searching any number. Implement using text mode. */

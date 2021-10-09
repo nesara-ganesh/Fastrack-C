@@ -40,6 +40,17 @@ void sort_array_main();
 void array_binary_search();
 void no_duplicate_array_fill();
 void concatenate_integers();
+void addition_of_matrices();
+void same_matrices_or_not();
+void sparce_matrix();
+void string_length_no_header();
+void reverse_string();
+void string_upper();
+void complex_arithmatic();
+void details_of_students();
+void student_data_dynamic();
+void file_operations();
+//void test();
 
 int main()
 {
@@ -79,7 +90,18 @@ int main()
     //sort_array_main();
     //array_binary_search();
     //no_duplicate_array_fill();
-    concatenate_integers();
+    //concatenate_integers();
+    //addition_of_matrices();
+    //same_matrices_or_not();
+    //sparce_matrix();
+    //string_length_no_header();
+    //reverse_string();
+    //string_upper();
+    //complex_arithmatic();
+    //details_of_students();
+    //student_data_dynamic();
+    file_operations();
+    //test();
 
     return 0;
 }
@@ -443,4 +465,131 @@ void concatenate_integers()
 {
     assert(CONCATENATE(1,2) == 12);
     assert(CONCATENATE(15,6) == 156);
+}
+
+
+void addition_of_matrices()
+{
+    int r, c;
+    printf("Enter the number of rows (between 1 and 100): ");
+    scanf("%d", &r);
+    printf("Enter the number of columns (between 1 and 100): ");
+    scanf("%d", &c);
+    matrix_addition(r, c);
+}
+
+void same_matrices_or_not()
+{
+   int r, c;
+    printf("Enter the number of rows (between 1 and 100): ");
+    scanf("%d", &r);
+    printf("Enter the number of columns (between 1 and 100): ");
+    scanf("%d", &c);
+    check_matrices_are_same(r, c);
+}
+
+void sparce_matrix()
+{
+    int r, c;
+    printf("Enter the number of rows (between 1 and 100): ");
+    scanf("%d", &r);
+    printf("Enter the number of columns (between 1 and 100): ");
+    scanf("%d", &c);
+    sparce_matrix_check(r, c);
+}
+
+void string_length_no_header()
+{
+    string_length();
+}
+
+void reverse_string()
+{
+    string_reverse();
+}
+
+void string_upper()
+{
+    char str[100];
+    //clrscr();
+    printf("Enter string : ");
+    scanf("%s", &str);
+    upper_argument(str);
+}
+
+
+void complex_arithmatic()
+{
+    int choice;
+    Complex a, b, c ;
+
+    printf("Press 1 to add two complex numbers.\nPress 2 to subtract two complex numbers.\nPress 3 to multiply two complex numbers.\n\n");
+    printf("Enter your choice\n");
+
+    scanf("%d", &choice);
+
+    if (choice >= 1 && choice <= 3)
+    {
+      printf("Enter a and b where a + ib is the first complex number.");
+      printf("\na = ");
+      scanf("%d", &a.real);
+      printf("b = ");
+      scanf("%d", &a.img);
+      printf("Enter c and d where c + id is the second complex number.");
+      printf("\nc = ");
+      scanf("%d", &b.real);
+      printf("d = ");
+      scanf("%d", &b.img);
+    }
+    else
+        printf("Enter a valid choice.\n");
+
+    c = operations_on_complex_numbers (a, b, choice);
+
+    if (choice == 1)
+    {
+      if (c.img >= 0)
+        printf("Sum of the complex numbers = %d + %di", c.real, c.img);
+      else
+        printf("Sum of the complex numbers = %d %di", c.real, c.img);
+    }
+    else if (choice == 2)
+    {
+      if (c.img >= 0)
+        printf("Difference of the complex numbers = %d + %di", c.real, c.img);
+      else
+        printf("Difference of the complex numbers = %d %di", c.real, c.img);
+    }
+    else if (choice == 3)
+    {
+      if (c.img >= 0)
+        printf("Multiplication of the complex numbers = %d + %di", c.real, c.img);
+      else
+        printf("Multiplication of the complex numbers = %d %di", c.real, c.img);
+    }
+}
+
+
+void details_of_students()
+{
+    int number;
+    printf ("enter the number of students.\n");
+    scanf("%d", &number);
+    student_details(number);
+}
+
+void student_data_dynamic()
+{
+    int noOfRecords;
+    printf("Enter the number of records: ");
+    scanf("%d", &noOfRecords);
+    student_data(noOfRecords);
+}
+
+void file_operations()
+{
+    //display_contents_of_file();
+    //file_copy();
+    //file_count();
+    //file_odd_even();
 }

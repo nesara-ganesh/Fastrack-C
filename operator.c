@@ -1053,3 +1053,385 @@ Array * deallocate(Array *free_array)
 
     return NULL;
 }
+
+
+int matrix_addition (int row_size, int column_size)
+{
+int a[100][100], b[100][100], sum[100][100], i, j;
+    printf("\nEnter elements of 1st matrix:\n");
+  for (i = 0; i < row_size; ++i)
+    for (j = 0; j < column_size; ++j) {
+      printf("Enter element a%d%d: ", i + 1, j + 1);
+      scanf("%d", &a[i][j]);
+    }
+
+  printf("Enter elements of 2nd matrix:\n");
+  for (i = 0; i < row_size; ++i)
+    for (j = 0; j < column_size; ++j) {
+      printf("Enter element b%d%d: ", i + 1, j + 1);
+      scanf("%d", &b[i][j]);
+    }
+
+  // adding two matrices
+  for (i = 0; i < row_size; ++i)
+    for (j = 0; j < column_size; ++j) {
+      sum[i][j] = a[i][j] + b[i][j];
+    }
+
+  // printing the result
+  printf("\nSum of two matrices: \n");
+  for (i = 0; i < row_size; ++i)
+    for (j = 0; j < column_size; ++j) {
+      printf("%d   ", sum[i][j]);
+      if (j == column_size - 1) {
+        printf("\n\n");
+      }
+    }
+
+  return 1;
+}
+
+
+int check_matrices_are_same(int row_size, int column_size)
+{
+    int a[100][100], b[100][100], i, j;
+    printf("\nEnter elements of 1st matrix:\n");
+  for (i = 0; i < row_size; ++i)
+    for (j = 0; j < column_size; ++j) {
+      printf("Enter element a%d%d: ", i + 1, j + 1);
+      scanf("%d", &a[i][j]);
+    }
+
+  printf("Enter elements of 2nd matrix:\n");
+  for (i = 0; i < row_size; ++i)
+    for (j = 0; j < column_size; ++j) {
+      printf("Enter element b%d%d: ", i + 1, j + 1);
+      scanf("%d", &b[i][j]);
+    }
+
+  // checking if matrices are same
+  for (i = 0; i < row_size; ++i){
+    for (j = 0; j < column_size; ++j) {
+        if (a[i][j] == b[i][j])
+            continue;
+        else{
+            printf ("Entered matrices are not same\n");
+            break;
+        }
+    }
+    }
+    printf ("Entered matrices are same.\n");
+    return 1;
+}
+
+
+int sparce_matrix_check(int row_size, int column_size)
+{
+  int a[100][100],i, j, count = 0;
+  float sparce = row_size * column_size / 2;
+    printf("\nEnter elements of 1st matrix:\n");
+  for (i = 0; i < row_size; ++i)
+    for (j = 0; j < column_size; ++j) {
+      printf("Enter element a%d%d: ", i + 1, j + 1);
+      scanf("%d", &a[i][j]);
+    }
+    // checking if matrix is sparce
+  for (i = 0; i < row_size; ++i){
+    for (j = 0; j < column_size; ++j) {
+        if (a[i][j] == 0)
+            count++;
+        }
+    }
+    if (count > sparce)
+        printf("\nMatrix is sparce.\n");
+    else
+        printf("\nMatrix is not sparce.\n");
+
+    return 1;
+}
+
+
+int string_length()
+{
+
+    printf ("Enter the string to find the length of (no spaces):\n");
+
+    char s[1000];
+    scanf ("%s", &s);
+
+    int i;
+
+    for (i = 0; s[i] != '\0'; ++i);
+
+    printf("Length of the string: %d", i);
+    return 0;
+}
+
+
+int string_reverse ()
+{
+    printf ("Enter the string to reverse (no spaces):\n");
+
+    char s[1000], r [1000];
+    scanf ("%s", &s);
+    int i, count;
+    for (i = 0; s[i] != '\0'; ++i) count = i;
+    for (i = 0
+         ; s[i] != '\o'; ++i) {
+            r[count-i] = s[i];
+    }
+    printf("%s", r);
+    return 0;
+}
+
+int upper_argument(char str[20])
+{
+    int i;
+    printf("%s in upper case is ",str);
+    for(i=0;str[i];i++)
+    {
+        if(str[i]>96 && str[i]<123)
+            str[i]-=32;
+    }
+    printf("%s",str);
+    return 0;
+}
+
+
+Complex operations_on_complex_numbers (Complex a, Complex b, int choice)
+{
+    Complex c;
+    if (choice == 1)
+    {
+      c.real = a.real + b.real;
+      c.img = a.img + b.img;
+
+    }
+
+    else if (choice == 2)
+    {
+      c.real = a.real - b.real;
+      c.img = a.img - b.img;
+
+    }
+
+    else if (choice == 3)
+    {
+      c.real = a.real*b.real - a.img*b.img;
+      c.img = a.img*b.real + a.real*b.img;
+
+    }
+    return c;
+}
+
+
+int student_details(int number)
+{
+    Student s[number];
+    int i;
+    for (i = 0; i < number; i++)
+    {
+    printf("Enter information:\n");
+    printf("Enter name: ");
+    scanf("%s",&s[i].name);
+    printf("Enter roll number: ");
+    scanf("%d", &s[i].roll_number);
+    printf("Enter marks: ");
+    scanf("%f", &s[i].marks);
+    printf("Enter the age: ");
+    scanf("%d", &s[i].age);
+    }
+
+    for (i = 0; i < number; i++)
+    {
+    printf("Displaying Information:\n");
+    printf("Name: ");
+    printf("%s\n", s[i].name);
+    printf("Roll number: %d\n", s[i].roll_number);
+    printf("Marks: %.1f\n", s[i].marks);
+    printf("Age: %d\n", s[i].age);
+    }
+    return 0;
+}
+
+int student_data (int noOfRecords)
+{
+    Student *ptr;
+
+  // Memory allocation for noOfRecords structures
+    ptr = (Student *)malloc(noOfRecords * sizeof(Student));
+
+    for (int i = 0; i < noOfRecords; ++i) {
+        printf("Enter name, roll number, marks and age:\n");
+        scanf("%s %d %d %d",(ptr + i) -> name, &(ptr + i)->roll_number, &(ptr + i)-> marks, &(ptr + i)-> age);
+    }
+
+    printf("Displaying Information:\n");
+    for (int i = 0; i < noOfRecords; ++i) {
+        printf("%s\t%d\t%d\t%d\n", (ptr + i)->name, (ptr + i)->roll_number, (ptr + i)->marks, (ptr + i)->age);
+    }
+
+    free(ptr);
+    return NULL;
+}
+
+
+int display_contents_of_file()
+{
+    char c[1000];
+    FILE *fptr;
+
+    if ((fptr = fopen("studytonight.txt", "r")) == NULL)
+    {
+        printf("Error! opening file");
+        // exit from program if file pointer returns NULL.
+        exit(1);
+    }
+
+    // read the text until newline
+    fscanf(fptr,"%[^EOF]", c);
+
+    printf("Data from the file:\n%s", c);
+    fclose(fptr);
+    return 0;
+}
+
+
+int file_copy()
+{
+	FILE *fptr1, *fptr2;
+	char filename[100], c;
+
+	printf("Enter the filename to open for reading \n");
+	scanf("%s", filename);
+
+	// Open one file for reading
+	fptr1 = fopen(filename, "r");
+	if (fptr1 == NULL)
+	{
+		printf("Cannot open file %s \n", filename);
+		exit(0);
+	}
+
+	printf("Enter the filename to open for writing \n");
+	scanf("%s", filename);
+
+	// Open another file for writing
+	fptr2 = fopen(filename, "w");
+	if (fptr2 == NULL)
+	{
+		printf("Cannot open file %s \n", filename);
+		exit(0);
+	}
+
+	// Read contents from file
+	c = fgetc(fptr1);
+	while (c != EOF)
+	{
+		fputc(c, fptr2);
+		c = fgetc(fptr1);
+	}
+
+	printf("\nContents copied to %s", filename);
+
+	fclose(fptr1);
+	fclose(fptr2);
+	return 0;
+}
+
+
+int file_count()
+{
+    char in_name[80];
+    FILE *in_file;
+    int ch, character = 0, line = 0, space = 0, tab = 0;
+
+    printf("Enter file name:\n");
+    scanf("%s", in_name);
+
+    in_file = fopen(in_name, "r");
+
+    if (in_file == NULL)
+        printf("Can't open %s for reading.\n", in_name);
+    else
+    {
+        while ((ch = fgetc(in_file)) != EOF)
+        {
+            character++;
+            if (ch == ' ')
+                space++;
+            if (ch == '\n')
+                line++;
+            if (ch == '\t')
+                tab++;
+        }
+        fclose(in_file);
+
+        printf("\nNumber of characters = %d", character);
+        printf("\nNumber of spaces = %d", space);
+        printf("\nNumber of tabs = %d", tab);
+        printf("\nNumber of lines = %d", line);
+    }
+    return 0;
+}
+
+
+int file_odd_even()
+{
+    /* File pointer to hold reference to different files */
+    FILE * fPtrIn,
+         * fPtrEven,
+         * fPtrOdd;
+
+
+    int num, success;
+
+    /*
+     * Open all files to perform read/write.
+     */
+    fPtrIn   = fopen("numbers.txt", "r");
+    fPtrEven = fopen("even-numbers.txt" , "w");
+    fPtrOdd  = fopen("odd-numbers.txt"  , "w");
+
+
+    /* fopen() return NULL if unable to open file in given mode. */
+    if(fPtrIn == NULL || fPtrEven == NULL || fPtrOdd == NULL )
+    {
+        /* Unable to open file hence exit */
+        printf("Unable to open file.\n");
+        printf("Please check whether file exists and you have read/write privilege.\n");
+        exit(EXIT_FAILURE);
+    }
+
+
+    /* File open success message */
+    printf("File opened successfully. Reading integers from file. \n\n");
+
+    // Read an integer and store read status in success.
+    while (fscanf(fPtrIn, "%d", &num) != -1)
+    {
+        /*
+         * Write even and odd numbers to different files.
+         */
+        if (isEven(num))
+            fprintf(fPtrEven, "%d\n", num);
+        else
+            fprintf(fPtrOdd, "%d\n", num);
+
+    }
+
+
+    /* Done with all files, hence close all. */
+    fclose(fPtrIn);
+    fclose(fPtrEven);
+    fclose(fPtrOdd);
+
+    printf("Data written to files successfully.");
+
+
+    return 0;
+}
+int isEven(const int NUM)
+{
+    return !(NUM & 1);
+}
